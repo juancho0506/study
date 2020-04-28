@@ -11,6 +11,9 @@ import java.util.Scanner;
  * and one of length 3. The number 20 has binary representation 10100 and contains one binary gap of length 1.
  * The number 15 has binary representation 1111 and has no binary gaps.
  * The number 32 has binary representation 100000 and has no binary gaps.
+ * Write an efficient algorithm for the following assumptions:
+ *
+ * N is an integer within the range [1..2,147,483,647].
  */
 public class Lesson1 {
     public static void main(String[] args) {
