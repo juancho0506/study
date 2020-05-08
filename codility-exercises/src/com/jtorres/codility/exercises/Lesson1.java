@@ -25,7 +25,7 @@ public class Lesson1 {
         System.out.println("Longest Binary Gap : " + result);
     }
 
-    private static int longestBinaryGap(int n) {
+    /*private static int longestBinaryGapV1(int n) {
         String binaryString = Integer.toBinaryString(n);
         int binaryGap = 0;
         if (binaryString.contains("0")) {
@@ -50,5 +50,36 @@ public class Lesson1 {
             }
         }
         return binaryGap;
+    }*/
+
+    private static int longestBinaryGap(int n) {
+        String binaryString = Integer.toBinaryString(n);
+        int currentGap = 0;
+        int maxGap = 0;
+        int onesCount = 0;
+
+        char[] binaryChars = binaryString.toCharArray();
+        for (char current: binaryChars) {
+            if (current == '1'){
+                onesCount++;
+            }
+            if (onesCount == 2 && currentGap > 0){
+                if (currentGap>maxGap){
+                    maxGap = currentGap;
+                }
+                currentGap = 0;
+                onesCount--;
+            }else if (onesCount == 2){
+                currentGap = 0;
+                onesCount--;
+            }
+
+            if (current == '0' && onesCount > 0){
+                currentGap++;
+            }
+
+        }
+
+        return maxGap;
     }
 }
