@@ -1,4 +1,4 @@
-package com.jtorres.hackerrank.daysOfCode30;
+package com.hackerrank.daysOfCode30;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class Day5 {
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         for (int i=1; i<=10; i++){
-            System.out.println("" + n + " x " + i + " = " + (n*i));
+            System.out.printf("%d x %d = %d%n", n, i, (n*i));
         }
         scanner.close();
     }

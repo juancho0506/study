@@ -1,7 +1,5 @@
-package com.jtorres.hackerrank.daysOfCode30;
+package com.hackerrank.daysOfCode30;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Day6 {
@@ -13,25 +11,24 @@ public class Day6 {
         int T = scanner.nextInt();
         scanner.nextLine();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-        List<String> result = new ArrayList<>();
-
-        for (int i=0; i<T; i++){
-            String word = scanner.nextLine();
-            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-            char[] wordChars = word.toCharArray();
-            StringBuilder evenChars = new StringBuilder();
-            StringBuilder oddChars = new StringBuilder();
-            for (int j=0; j<wordChars.length; j++){
-                if (j%2 == 0){
-                    evenChars.append(wordChars[j]);
-                }else
-                    oddChars.append(wordChars[j]);
-            }
-            result.add(evenChars.toString() + " " + oddChars.toString());
+        StringBuilder result = new StringBuilder();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        for (int i = 0; i < T; i++) {
+            result.append(evenAndOdds(scanner.nextLine().toCharArray()));
         }
-        for (String word:result) {
-            System.out.println(word);
-        }
+        scanner.close();
+        System.out.println(result);
+    }
 
+    private static String evenAndOdds(char[] wordChars) {
+        StringBuilder evenChars = new StringBuilder();
+        StringBuilder oddChars = new StringBuilder();
+        for (int j = 0; j < wordChars.length; j++) {
+            if (j % 2 == 0) {
+                evenChars.append(wordChars[j]);
+            } else
+                oddChars.append(wordChars[j]);
+        }
+        return String.format("%s %s%n", evenChars, oddChars);
     }
 }

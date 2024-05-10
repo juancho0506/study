@@ -1,9 +1,12 @@
-package com.jtorres.hackerrank.daysOfCode30;
+package com.hackerrank.daysOfCode30;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class Day8 {
     public static void main(String []argh){
         Scanner in = new Scanner(System.in);
@@ -20,7 +23,9 @@ public class Day8 {
             String name = in.next();
             // Write code here
             String message = "";
-            message = phonebook.containsKey(name) ? name + "=" + phonebook.get(name) : "Not found";
+            Integer contactPhone = phonebook.get(name);
+            //message = phonebook.containsKey(name) ? name + "=" + phonebook.get(name) : "Not found";
+            message = contactPhone != null ? name + "=" + contactPhone : "Not found";
             System.out.println(message);
         }
         in.close();

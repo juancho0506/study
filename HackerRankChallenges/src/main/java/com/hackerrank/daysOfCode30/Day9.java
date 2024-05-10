@@ -1,4 +1,4 @@
-package com.jtorres.hackerrank.daysOfCode30;
+package com.hackerrank.daysOfCode30;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -9,7 +9,7 @@ public class Day9 {
     // Complete the factorial function below.
     static double factorial(int n) {
         if (n <= 1)
-        return 1;
+            return 1;
         return n * factorial(n-1);
     }
 

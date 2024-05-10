@@ -1,4 +1,4 @@
-package com.jtorres.hackerrank.daysOfCode30;
+package com.hackerrank.daysOfCode30;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

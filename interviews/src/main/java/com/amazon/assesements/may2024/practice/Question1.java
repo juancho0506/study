@@ -48,31 +48,30 @@ class Question1 {
         int itemsTotal = arr.size();
         List<Integer> listA = new ArrayList<>();
 
-        for (int i=0; i<arr.size(); i++) {
-            Integer current = arr.get(i);
+        for (Integer current : arr) {
             totalWeight += current;
 
-            if (current >= maxWeight){
+            if (current >= maxWeight) {
                 maxWeight = current;
                 //Add current maxWeight item on the list to A list.
                 listA.add(current);
 
             } else {
                 //Add items that are close to the max weight:
-                int minPortionWeightDiff = (int) Math.round(maxWeight*0.6);
+                int minPortionWeightDiff = (int) Math.round(maxWeight * 0.6);
                 if (current >= minPortionWeightDiff) {
                     listA.add(current);
                 }
             }
         }
         System.out.println("Total weight : " + totalWeight);
-        System.out.println("Total items : " + itemsTotal    );
+        System.out.println("Total items : " + itemsTotal);
 
         int minimunTotalWeight = (totalWeight/2)+1;
         int listAweight = 0;
         List<Integer> finalList = new ArrayList<>();
         //Order listA from ASC
-        listA.sort(Collections.reverseOrder());
+        listA.sort(Collections.reverseOrder()); //Complexity of O(Nlog(n))
         System.out.println("ListA sorted asc: " + listA);
         for (Integer current: listA){
             finalList.add(current);
