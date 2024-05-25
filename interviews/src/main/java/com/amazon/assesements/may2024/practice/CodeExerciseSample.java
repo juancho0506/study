@@ -27,11 +27,44 @@ public class CodeExerciseSample {
 
     public static void main(String[] args) {
         int[][] testGrid = new int[][]{new int[]{1,0,0,1}, new int[]{0,1,1,0}};
+        int[][] testMatrix = new int[2][4];
         System.out.println("Grid with robots: " + Arrays.deepToString(testGrid));
         System.out.println("Is valid time series? : " + isValidPath(testGrid, testGrid.length));
     }
 
     private static boolean isValidPath(int[][] grid, int numRobots){
+        //Edge cases
+        //Edge case 1: Number of robots can be zero
+        if (numRobots < 1)
+            return false;
+
+        //Edge case2: Only 1 series on the array
+        if (grid.length < 2)
+            return true;
+
+        //TODO: Should I check if the internal arrays has at least a size of 2, to check a next position.
+
+        //Algorithm: We can see this series of scenarios as a matrix where:
+        //Each row represents a different scenario or series of movements, and each column will be the movements itself or robot position.
+        for (int i=0; i<grid.length; i++) {
+            int robotCounter = 0;
+            for (int j=0; j< grid[0].length; j++){
+                if (grid[i][j] == 1){
+                    robotCounter++;
+                    //Invalidate the process if the robot counter is greater than is supposed to be.
+                    if (robotCounter>numRobots){
+                        break;
+                    }
+                    //Check by key positions
+                    //If robot is at the beginning edge.
+                    if (i == 0 && j+1 < grid.length){
+                        if (grid[i+1][j+1]!=1){
+                            //TODO: Separete this to another function and use a unique way to compare.
+                        }
+                    }
+                }
+            }
+        }
 
         return false;
     }
