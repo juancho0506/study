@@ -68,8 +68,7 @@ public class Exercises {
         // write your code here
         if (n<0) return -1;
         if (n==0) return 0;
-        long result = (n*(n+1)*(2L*n+1))/6;
-        return result;
+        return (n*(n+1)*(2L*n+1))/6;
 
     }
 
@@ -83,9 +82,21 @@ public class Exercises {
 
         if (!divisibleBy4)
             return false;
-        if (divisibleBy100 && !divisibleBy400)
+        return !divisibleBy100 || divisibleBy400;
+    }
+
+    public boolean isPerfectNumber(int number) {
+        if (number <= 0)
             return false;
 
-        return true;
+        if (number == 1)
+            return false;
+        long divisorSum = 0;
+        for (int i=number-1; i>0; i--) {
+            if (number%i == 0) {
+                divisorSum += i;
+            }
+        }
+        return divisorSum==number;
     }
 }

@@ -170,4 +170,11 @@ class ExercisesTest {
         //Assert that
         assertTrue(result);
     }
+
+    @Test
+    void isPerfectNumber28() {
+        int numberToTest = 28;
+        Exercises perfectNumnber = new Exercises();
+        assertTrue(perfectNumnber.isPerfectNumber(numberToTest));
+    }
 }
