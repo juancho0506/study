@@ -85,6 +85,12 @@ public class Exercises {
         return !divisibleBy100 || divisibleBy400;
     }
 
+    /**
+     * Method that validates if a number is a perfect number, by iterating on
+     * a loop, finding the sum of its divisors.
+     * @param number The number to validate.
+     * @return true if it is a perfect number, false otherwise.
+     */
     public boolean isPerfectNumber(int number) {
         if (number <= 0)
             return false;
@@ -99,4 +105,36 @@ public class Exercises {
         }
         return divisorSum==number;
     }
+
+    /**
+     * Method that validates if a number is a perfect number, by iterating on
+     * a loop using the square root and the divisor found on the loop to reduce complexity,
+     * as a result finding the sum of its divisors.
+     * Time complexity: O(Sqrt(n))
+     * @param number The number to validate.
+     * @return true if it is a perfect number, false otherwise.
+     */
+    public boolean isPerfectNumberOptimized(int number) {
+        if (number <= 0)
+            return false;
+
+        if (number == 1)
+            return false;
+        //Number 1 is divisor of all numbers.
+        long divisorSum = 1;
+        //Premise: If i is a divisor then number/i is also a divisor.
+        for (int i=2; i*i <= number; i++) {
+            if (number%i == 0) {
+                // n is a perfect square
+                // Ex: let's take 25 we need to add 5 only once
+                // sum += i + n / i will add it twice
+                if (i * i == number)
+                    divisorSum += i;
+                else
+                    divisorSum += i + (number / i);
+            }
+        }
+        return divisorSum==number;
+    }
+
 }

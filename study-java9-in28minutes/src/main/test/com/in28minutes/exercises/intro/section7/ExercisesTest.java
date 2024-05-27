@@ -173,7 +173,19 @@ class ExercisesTest {
     @Test
     void isPerfectNumber28() {
         int numberToTest = 28;
-        Exercises perfectNumnber = new Exercises();
-        assertTrue(perfectNumnber.isPerfectNumber(numberToTest));
+        Exercises perfectNumber = new Exercises();
+        assertTrue(perfectNumber.isPerfectNumber(numberToTest));
+    }
+    @Test
+    void isNotPerfectNumber64() {
+        int numberToTest = 64;
+        Exercises perfectNumber = new Exercises();
+        assertFalse(perfectNumber.isPerfectNumber(numberToTest));
+    }
+    @Test
+    void isPerfectNumber496() {
+        int numberToTest = 496;
+        Exercises perfectNumber = new Exercises();
+        assertTrue(perfectNumber.isPerfectNumberOptimized(numberToTest));
     }
 }
