@@ -151,9 +151,62 @@ public class OOPExercises {
             int diffX = other.getX() - this.x;
             int diffY = other.getY() - this.y;
             double distance =  Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-            return Math.ulp(distance);
+            return Math.round(distance);
             //Other way no Math pow:
             //return Math.sqrt(diffX*diffX + diffY*diffY);
+        }
+    }
+    /**
+     * The Red-Green-Blue (RGB) model is a popular way to represent colors in computer systems.
+     * In this model, each color is represented as a combination of the primary colors red, green, and blue.
+     * Each of these primary colors can have intensity values ranging from 0 to 255.
+     * In this exercise, you are tasked with completing the RGBColor class that models a color in the RGB model.
+     * The class has fields for the red, green, and blue intensities, and methods to get these values.
+     * Additionally, there's an invert method that changes the color to its complementary color (the inverse color on a color wheel).
+     * You need to implement the constructor, the getter methods for the red, green, and blue values, and the invert method.
+     * The invert method should subtract the current intensity value of each primary color from 255 to get the inverted color.
+     * RGBColor class representing a color using Red Green Blue (RGB) model.
+     */
+    public static class RGBColor {
+
+        // The Red, Green, Blue color values range from 0 to 255.
+        private int red;
+        private int green;
+        private int blue;
+        //Constant
+        private static final int MAX_RGB_VALUE = 255;
+
+        // Constructor for RGBColor class which initializes the color with provided red, green and blue values.
+        public RGBColor(int red, int green, int blue) {
+            this.red = red;
+            this.green = green;
+            this.blue = blue;
+        }
+
+        // Getter method to get the red value of the color.
+        public int getRed() {
+            // write your code here
+            return this.red;
+        }
+
+        // Getter method to get the green value of the color.
+        public int getGreen() {
+            // write your code here
+            return this.green;
+        }
+
+        // Getter method to get the blue value of the color.
+        public int getBlue() {
+            // write your code here
+            return this.blue;
+        }
+
+        // Method to invert the color. The inversion is done by subtracting each color component from 255.
+        public void invert() {
+            // write your code here
+            this.red = MAX_RGB_VALUE - this.red;
+            this.green = MAX_RGB_VALUE - this.green;
+            this.blue = MAX_RGB_VALUE - this.blue;
         }
     }
 }

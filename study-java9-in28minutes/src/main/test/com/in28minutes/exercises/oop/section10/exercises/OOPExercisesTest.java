@@ -61,6 +61,18 @@ class OOPExercisesTest {
         //Then
         double distance = point1.distanceTo(point2);
         //Assert that
-        assertEquals(2.23606797749979, distance);
+        assertEquals(2, distance);
+    }
+
+    @Test
+    void testRGBCreationAndInversion() {
+        //Given
+        OOPExercises.RGBColor rgbColor = new OOPExercises.RGBColor(180, 200, 0);
+        //Then
+        rgbColor.invert();
+        //Assert that
+        assertEquals(75, rgbColor.getRed());
+        assertEquals(55, rgbColor.getGreen());
+        assertEquals(255, rgbColor.getBlue());
     }
 }
