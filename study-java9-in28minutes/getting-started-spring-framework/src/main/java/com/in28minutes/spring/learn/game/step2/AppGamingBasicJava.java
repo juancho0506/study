@@ -1,9 +1,9 @@
-package com.in28minutes.spring.intro.game.step2;
+package com.in28minutes.spring.learn.game.step2;
 
-import com.in28minutes.spring.intro.game.step2.gaming.GameRunner;
-import com.in28minutes.spring.intro.game.step2.gaming.games.MarioGame;
-import com.in28minutes.spring.intro.game.step2.gaming.games.PacManGame;
-import com.in28minutes.spring.intro.game.step2.gaming.games.SuperContraGame;
+import com.in28minutes.spring.learn.game.step2.gaming.GameRunner;
+import com.in28minutes.spring.learn.game.step2.gaming.games.MarioGame;
+import com.in28minutes.spring.learn.game.step2.gaming.games.PacManGame;
+import com.in28minutes.spring.learn.game.step2.gaming.games.SuperContraGame;
 
 /**
  * Step2: Loosing coupling...

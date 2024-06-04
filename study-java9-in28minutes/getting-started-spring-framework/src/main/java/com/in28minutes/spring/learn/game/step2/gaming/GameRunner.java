@@ -1,7 +1,6 @@
-package com.in28minutes.spring.intro.game.step2.gaming;
+package com.in28minutes.spring.learn.game.step2.gaming;
 
-import com.in28minutes.spring.intro.game.step2.gaming.console.GamingConsole;
-import com.in28minutes.spring.intro.game.step2.gaming.games.MarioGame;
+import com.in28minutes.spring.learn.game.step2.gaming.console.GamingConsole;
 
 /**
  * Tighten coupled Java Code for a Gaming simulator class

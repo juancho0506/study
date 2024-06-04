@@ -1,6 +1,6 @@
-package com.in28minutes.spring.intro;
+package com.in28minutes.spring.learn;
 
-import com.in28minutes.spring.intro.game.step2.AppGamingBasicJava;
+import com.in28minutes.spring.learn.game.step2.AppGamingBasicJava;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package com.in28minutes.spring.intro.game.step1;
+package com.in28minutes.spring.learn.game.step1;
 
 /**
  * Step1: A Tighten coupled approach.

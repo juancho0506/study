@@ -1,11 +1,13 @@
-package com.in28minutes.spring.intro.game.step1;
+package com.in28minutes.spring.learn.game.step2.gaming.games;
+
+import com.in28minutes.spring.learn.game.step2.gaming.console.GamingConsole;
 
 /**
  * Represents a game type called Mario Game.
- * This class should represent a game implementing an
+ * This class implements an
  * interface or blueprint for future games.
  */
-public class MarioGame {
+public class MarioGame  implements GamingConsole {
     public void up(){
         System.out.println("Jump");
     }

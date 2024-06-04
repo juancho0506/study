@@ -1,6 +1,6 @@
-package com.in28minutes.spring.intro.game.step2.gaming.games;
+package com.in28minutes.spring.learn.game.step2.gaming.games;
 
-import com.in28minutes.spring.intro.game.step2.gaming.console.GamingConsole;
+import com.in28minutes.spring.learn.game.step2.gaming.console.GamingConsole;
 
 /**
  * Represents a game type called Mario Game.

@@ -1,12 +1,14 @@
-package com.in28minutes.spring.intro.game.step1;
+package com.in28minutes.spring.learn.game.step3.spring.wiring.gaming;
+
+import com.in28minutes.spring.learn.game.step3.spring.wiring.gaming.console.GamingConsole;
 
 /**
  * Tighten coupled Java Code for a Gaming simulator class
  */
 public class GameRunner {
     //This represents tightly coupled with an external class.
-    MarioGame game;
-    public GameRunner(MarioGame game) {
+    GamingConsole game;
+    public GameRunner(GamingConsole game) {
         this.game = game;
     }
 

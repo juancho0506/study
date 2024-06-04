@@ -1,4 +1,4 @@
-package com.in28minutes.spring.intro.game.step2.gaming.console;
+package com.in28minutes.spring.learn.game.step2.gaming.console;
 
 public interface GamingConsole {
     void up();
