@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class FileReadWriteRunner {
     public static void main(String[] args) throws IOException, URISyntaxException {
@@ -20,5 +21,13 @@ public class FileReadWriteRunner {
         //Path newFilePath = Paths.get();
         Files.writeString(path, newFileContent);
         System.out.println(Files.readString(path));
+
+        /*Path path = Paths.get("src/main/resources/sample1.txt");
+        String fileContent = Files.readString(path);
+        System.out.println(fileContent);
+        String newFileContent = fileContent.replace("Line", "Lines");
+        Path newFilePath = Paths.get("src/main/resources/sample1-new.txt");
+        Files.writeString(newFilePath, newFileContent);
+        System.out.println(Files.readString(newFilePath));*/
     }
 }
