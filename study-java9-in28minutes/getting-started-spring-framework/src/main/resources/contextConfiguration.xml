@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Simple value beans or functions -->
+    <bean id="name" class="java.lang.String">
+        <constructor-arg value="Ranga" />
+    </bean>
+
+    <bean id="age" class="java.lang.Integer">
+        <constructor-arg value="35" />
+    </bean>
+
+    <!-- Objects Bean to inject -->
+    <bean id="dependencyClass" class="com.in28minutes.spring.learn.context.configuration.xml.DependencyClass"/>
+    <bean id="serviceClass" class="com.in28minutes.spring.learn.context.configuration.xml.ServiceClass">
+        <constructor-arg ref="dependencyClass" />
+    </bean>
+
+    <!-- If you want to define a Component Scan -->
+    <context:component-scan
+            base-package="com.in28minutes.spring.learn.context.configuration.xml"/>
+
+</beans>

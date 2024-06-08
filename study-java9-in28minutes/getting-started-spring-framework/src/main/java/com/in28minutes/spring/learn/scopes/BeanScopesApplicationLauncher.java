@@ -1,10 +1,8 @@
 package com.in28minutes.spring.learn.scopes;
 
-import com.in28minutes.spring.learn.business.calculation.service.BusinessCalculatorService;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +13,7 @@ import org.springframework.stereotype.Component;
  * Normal Class by default is a Singleton in Spring.
  */
 @Component
-class NormalClass{
+class NormalClass {
     PrototypeClass prototypeClass;
 
     public NormalClass(PrototypeClass prototypeClass) {
@@ -28,20 +26,21 @@ class NormalClass{
      * after the bean is created and dependencies injected.
      */
     @PostConstruct
-    public void init(){
+    public void init() {
         this.prototypeClass.someTask();
     }
+
     //Annotation to release resources before the bean is
     @PreDestroy
-    public void cleanup(){
-        System.out.println("Releasing resources" );
+    public void cleanup() {
+        System.out.println("Releasing resources");
     }
 }
 
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Component
-class PrototypeClass{
-    public void someTask(){
+class PrototypeClass {
+    public void someTask() {
         System.out.println("Running task to initialize other class.");
     }
 }
@@ -58,7 +57,7 @@ public class BeanScopesApplicationLauncher {
             System.out.println(context.getBean(NormalClass.class));
             System.out.println(context.getBean(NormalClass.class));
 
-            //Protoype creates different instances for the same class
+            //Prototype creates different instances for the same class
             System.out.println(context.getBean(PrototypeClass.class));
             System.out.println(context.getBean(PrototypeClass.class));
             System.out.println(context.getBean(PrototypeClass.class));
