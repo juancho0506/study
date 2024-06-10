@@ -18,6 +18,7 @@
         <module>java-programming-beginners-course</module>
         <module>java9-modularization-consumer-module</module>
         <module>getting-started-spring-framework</module>
+        <module>getting-started-spring-boot</module>
     </modules>
 
     <properties>

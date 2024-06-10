@@ -1,5 +1,11 @@
 package com.in28minutes.exercises.loops;
 
+import com.google.common.math.BigIntegerMath;
+
+import java.math.BigInteger;
+import java.util.stream.DoubleStream;
+import java.util.stream.LongStream;
+
 /**
  * In this problem, you are tasked with completing the implementation of a FactorialCalculator class in Java that calculates the factorial of a given number.
  * The factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.
@@ -14,7 +20,7 @@ public class FactorialCalculator {
      * @param number number to calculate factorial.
      * @return the factorial result of a number.
      */
-    public double calculateFactorialRecursive(int number) {
+    public long calculateFactorialRecursive(int number) {
         // Write your code here
         if (number==0 || number == 1)
             return 1;
@@ -22,7 +28,13 @@ public class FactorialCalculator {
             return -1;
         return number * calculateFactorialRecursive(number-1);
     }
-    public double calculateFactorialLoop(int number){
+
+    /**
+     * Classic factorial Impl with Loops (Too limited as well)
+     * @param number number to calculate factorial.
+     * @return the factorial result of a number.
+     */
+    public long calculateFactorialLoop(int number){
         //Edge case negative numbers.
         if (number < 0)
             return -1;
@@ -34,10 +46,39 @@ public class FactorialCalculator {
         // (since 0 and 1 are covered already) and goes up to the input number.
         for (int i = 2; i <= number; i++) {
             // On each iteration, we multiply the current value of factorial by the loop index i.
-            factorial *= i;
+            factorial = factorial * i;
         }
         // After the loop finishes, we have our result. We simply return this value.
         return factorial;
     }
-
+    /**
+     * Factorial Impl using Java 8 Streams API (Too limited as well)
+     * @param number number to calculate factorial.
+     * @return the factorial result of a number.
+     */
+    public long calculateFactorialStreams(int number){
+        return LongStream.rangeClosed(1,number)
+                .reduce(1, (long x, long y) -> x*y);
+    }
+    /**
+     * Factorial Impl using BigInteger (More capacity, still some limited)
+     * @param number number to calculate factorial.
+     * @return the factorial result of a number.
+     */
+    public BigInteger calculateFactorialBigInteger(int number){
+        BigInteger result = BigInteger.ONE;
+        for (int i=2; i <= number; i++){
+            result = result.multiply(BigInteger.valueOf(i));
+        }
+        return result;
+    }
+    /**
+     * Factorial Impl using Google Guava library, is really effective
+     * to calculate big numbers (optimized algorithm)
+     * @param number number to calculate factorial.
+     * @return the factorial result of a number.
+     */
+    public BigInteger calculateFactorialGuava(int number){
+        return BigIntegerMath.factorial(number);
+    }
 }
