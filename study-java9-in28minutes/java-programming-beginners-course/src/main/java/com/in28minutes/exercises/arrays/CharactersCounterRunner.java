@@ -34,6 +34,12 @@ public class CharactersCounterRunner {
                 }).count();
     }
 
+    /**
+     * Calculates the words that has aa or AA in consecutive order at the beginning.
+     * @param words an array of words that could contain double AA or aa
+     *              characters at the beginning.
+     * @return The count of the words with double aa or AA.
+     */
     private static int countAAs(String[] words) {
         int count = 0;
         for (String word: words){
