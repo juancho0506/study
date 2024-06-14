@@ -1,6 +1,5 @@
 package com.in28minutes.exercises.referencetypes;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -55,6 +54,7 @@ public class StringMagic {
         // Return the number of uppercase letters found.
         return count;
     }
+
     /**
      * This method checks if a given string has two consecutive identical characters.
      *
@@ -72,7 +72,8 @@ public class StringMagic {
         String noSpacesStr = str.replace(" ", ""); //Ex: hello; size=5
         return str.chars().distinct().count() < noSpacesStr.length(); //distinct = 4
     }
-    public boolean hasConsecutiveDuplicatesOldStyle(String str){
+
+    public boolean hasConsecutiveDuplicatesOldStyle(String str) {
         // Edge case: if the string is empty or has only one character, return false.
         if (str.isEmpty() || str.length() == 1) {
             return false;
@@ -92,6 +93,7 @@ public class StringMagic {
         return false;
 
     }
+
     /**
      * This method finds the rightmost digit in a given string.
      *

@@ -1,4 +1,4 @@
-package com.in28minutes.exercises.arrays;
+package com.in28minutes.exercises.z.extra.interviews;
 
 import java.util.ArrayList;
 import java.util.Arrays;
