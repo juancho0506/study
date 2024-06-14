@@ -1,11 +1,12 @@
 package com.in28minutes.exercises.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * ["aaryanna", "aayanna", "airianna", "alassandra", "allanna", "allannah", "allessandra", "allianna",
  * "allyanna", "anastaisa", "anastashia", "anastasia", "annabella", "annabelle", "annebelle"]
- *
  * Sample Output
  * aaryanna - 4
  * aayanna - 3
@@ -19,26 +20,15 @@ public class CharactersCounterRunner {
                 "allyanna", "anastaisa", "anastashia", "anastasia", "annabella", "annabelle", "annebelle"};
 
         int numberOfAA = countAAsStream(words);
-        int numberOfDiffChars = diffChars(words);
         System.out.println(numberOfAA);
-        System.out.println(numberOfDiffChars);
-    }
-
-    private static int diffChars(String[] words) {
-        return (int) Arrays.stream(words)
-                .map(w-> {
-                    if (w.length() > 1){
-                       return w;
-                    }
-                    return "";
-                }).count();
+        System.out.println(diffChars(words));
     }
 
     /**
      * Calculates the words that has aa or AA in consecutive order at the beginning.
      * @param words an array of words that could contain double AA or aa
      *              characters at the beginning.
-     * @return The count of the words with double aa or AA.
+     * @return The count of the words with double aa or AA at the beginning.
      */
     private static int countAAs(String[] words) {
         int count = 0;
@@ -60,13 +50,25 @@ public class CharactersCounterRunner {
     }
 
     /**
-     * Calculates the words that has aa or AA in consecutive order at the beginning.
+     * Calculates the words using Streams that has aa or AA in consecutive order at the beginning.
      * @param words an array of words that could contain double AA or aa
      *              characters at the beginning.
-     * @return The count of the words with double aa or AA.
+     * @return The count of the words with double aa or AA at the beginning.
      */
     private static int countAAsStream(String[] words) {
-        return (int) Arrays.stream(words).filter(s-> s.contains("aa")).count();
+        return (int) Arrays.stream(words).filter(s-> s.startsWith("aa")).count();
+    }
+
+    /**
+     * Calculates the chars that are different in the string.
+     * @param words an array of words.
+     * @return The count of the chars that are different from others.
+     */
+    private static List<String> diffChars(String[] words) {
+        final List<String> result = new ArrayList<>();
+        Arrays.stream(words)
+                .forEach(w-> result.add(w + " - " + w.chars().distinct().count()+"\n"));
+        return result;
     }
 
 }

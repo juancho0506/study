@@ -36,4 +36,65 @@ class StringMagicTest {
         //Assert that:
         assertEquals(5, res);
     }
+    @Test
+    void countUppercaseLettersWith1() {
+        //Given
+        String test = "this is a String test";
+        StringMagic sm = new StringMagic();
+        //Then
+        int res = sm.countUppercaseLetters(test);
+        //Assert that:
+        assertEquals(1, res);
+    }
+
+    @Test
+    void hasCharDuplicatesHello() {
+        //Given
+        String test = "Hello";
+        StringMagic sm = new StringMagic();
+        //Then
+        boolean res = sm.hasCharDuplicates(test);
+        //Assert that:
+        assertTrue(res);
+    }
+    @Test
+    void hasCharDuplicatesSeveralRepetitions() {
+        //Given
+        String test = "Hello world boss!!";
+        StringMagic sm = new StringMagic();
+        //Then
+        boolean res = sm.hasCharDuplicates(test);
+        //Assert that:
+        assertTrue(res);
+    }
+    @Test
+    void hasCharDuplicatesNoDuplicates() {
+        //Given
+        String test = "Hi";
+        StringMagic sm = new StringMagic();
+        //Then
+        boolean res = sm.hasCharDuplicates(test);
+        //Assert that:
+        assertFalse(res);
+    }
+    @Test
+    void hasCharDuplicatesOneChar() {
+        //Given
+        String test = "H";
+        StringMagic sm = new StringMagic();
+        //Then
+        boolean res = sm.hasCharDuplicates(test);
+        //Assert that:
+        assertFalse(res);
+    }
+    @Test
+    void hasCharDuplicatesNoAdjacent() {
+        //Given
+        String test = "hi how are you?";
+        StringMagic sm = new StringMagic();
+        //Then
+        boolean res = sm.hasConsecutiveDuplicatesOldStyle(test);
+        //Assert that:
+        assertFalse(res);
+    }
 }
