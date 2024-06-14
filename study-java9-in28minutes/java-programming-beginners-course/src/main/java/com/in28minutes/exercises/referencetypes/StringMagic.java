@@ -1,5 +1,6 @@
 package com.in28minutes.exercises.referencetypes;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -90,5 +91,19 @@ public class StringMagic {
         // If no duplicate consecutive characters were found, return false.
         return false;
 
+    }
+    /**
+     * This method finds the rightmost digit in a given string.
+     *
+     * @param str The string to find the rightmost digit in.
+     * @return The rightmost digit in the string. If no digit is found, return -1.
+     */
+    public int getRightmostDigit(String str) {
+        //Edge cases
+        if (str == null)
+            return -1;
+        if (str.isBlank())
+            return -1;
+        return str.chars().filter(Character::isDigit).max().orElse(-1);
     }
 }
