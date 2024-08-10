@@ -69,4 +69,35 @@ class ArrayMagicTest {
         //Assert that:
         assertEquals(-5, res);
     }
+
+    @Test
+    void isSortedWithNoSortedValues() {
+        //Given
+        int[] test = {-5, -2, -100, -500};
+        ArrayMagic magic = new ArrayMagic();
+        //Then
+        boolean res = magic.isSorted(test);
+        //Assert that:
+        assertFalse(res);
+    }
+    @Test
+    void isSortedWithIdenticalValues() {
+        //Given
+        int[] test = {2, 2, 2, 2};
+        ArrayMagic magic = new ArrayMagic();
+        //Then
+        boolean res = magic.isSorted(test);
+        //Assert that:
+        assertTrue(res);
+    }
+    @Test
+    void isSortedAscValid() {
+        //Given
+        int[] test = {-3, -2, -1, 0, 1};
+        ArrayMagic magic = new ArrayMagic();
+        //Then
+        boolean res = magic.isSorted(test);
+        //Assert that:
+        assertTrue(res);
+    }
 }

@@ -66,4 +66,39 @@ public class ArrayMagic {
             return -1;
         return secondLargest;
     }
+
+    /**
+     * This method checks if the input array is sorted in ascending order.
+     *
+     * @param array the array to check
+     * @return true if the array is sorted, false otherwise
+     */
+    public boolean isSorted(int[] array) {
+        //Edge cases:
+        if (array == null)
+            return false;
+        if (array.length <= 1)
+            return true;
+        int minorInteger = Integer.MIN_VALUE;
+
+        //First way to do it:
+        /*int cont = 0;
+        for (int current: array){
+            if (current >= minorInteger && cont ==0){
+                minorInteger = current;
+                cont++;
+            } else {
+                if (current < minorInteger)
+                    return false;
+            }
+        }
+        return true;*/
+
+        //Second way:
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[i-1])
+                return false;
+        }
+        return true;
+    }
 }
